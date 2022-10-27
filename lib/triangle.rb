@@ -10,12 +10,13 @@ class Triangle
     check_triangle
 
     if @a == @b && @b ==@c
-      :equilateral
-    elsif @a == @b || @b == @c || @a == @c
-      :isosceles  
+      "equilateral"
     elsif @a != @b && @b != @c && @a != @c
-      :scalene
+      "scalene"
     end
+    elsif @a == @b || @b == @c || @a == @c
+      "isosceles"  
+    
   end
 
   def all_positive_sides
@@ -29,7 +30,7 @@ class Triangle
 
   def check_triangle
     if !all_positive_sides  || !triangle_inequality_checker
-      raise TriangleError
+       TriangleError
     end
 
   end
